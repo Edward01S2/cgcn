@@ -39,7 +39,7 @@ const options = {
   threshold: .70 // half of item height
 }
 
-const circle = document.getElementById('sticky_header');
+const circle = document.querySelector('#sticky_header');
 
 const observer = new IntersectionObserver(entries => {
   const [{ isIntersecting }] = entries
@@ -52,7 +52,7 @@ const observer = new IntersectionObserver(entries => {
   }
 }, options);
 
-if ('IntersectionObserver' in window) observer.observe(circle);
+observer.observe(circle);
 
 
 });
