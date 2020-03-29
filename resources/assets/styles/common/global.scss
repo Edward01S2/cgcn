@@ -1,0 +1,58 @@
+/**
+ * Global
+ */
+/* purgecss start ignore */
+
+html {
+  @apply font-freight;
+  scroll-behavior: smooth;
+}
+
+p, li {
+  @apply mb-4 leading-7 text-lg;
+}
+@screen md {
+  p, li {
+    @apply text-xl leading-normal;
+  }
+}
+// @screen xl {
+//   p, li {
+//     @apply text-2xl;
+//   }
+// }
+
+ul {
+  @apply list-disc ml-12;
+}
+
+h2 {
+  @apply font-semibold text-2xl mb-4;
+}
+h3 {
+  @apply font-semibold text-xl mb-4;
+}
+b, strong {
+  @apply font-semibold;
+}
+
+// a {
+//   color: map-get($theme-colors, 'primary');
+// }
+
+// /**
+//  * Block editor color palette utilities
+//  * @see https://git.io/JeyD6
+//  */
+
+// @each $color-name, $color-value in $theme-colors {
+//   .has-#{$color-name}-color {
+//     color: $color-value;
+//   }
+
+//   .has-#{$color-name}-background-color {
+//     background-color: $color-value;
+//   }
+// }
+
+/* purgecss end ignore */

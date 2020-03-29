@@ -1,0 +1,25 @@
+/**
+ * Editor
+ */
+
+ @import 'config/variables';
+ @import 'config/external';
+ 
+ /** Common */
+ 
+ /** Components */
+ @import 'components';
+ 
+ /** Partials */
+ @import 'partials/header';
+// @import 'config/variables';
+// @import 'config/external';
+
+// @import '~bootstrap/scss/functions';
+// @import '~bootstrap/scss/variables';
+// @import '~bootstrap/scss/mixins';
+
+.editor-styles-wrapper > * {
+
+  // font-family: $font-family-base;
+}
