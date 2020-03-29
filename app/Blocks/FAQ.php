@@ -79,7 +79,6 @@ class FAQ extends Block
     {
         return [
             'title' => get_field('Title'),
-            'background' => get_field('Background'),
             'items' => $this->items(),
         ];
     }
@@ -105,10 +104,11 @@ class FAQ extends Block
 
         $fAQ
             ->addText('Title')
-            ->addImage('Background')
-            ->addRepeater('items')
+            ->addRepeater('items', [
+                'layout' => 'row'
+            ])
                 ->addText('Question')
-                ->addTextarea('Answer')
+                ->addWysiwyg('Answer')
             ->endRepeater();
 
         return $fAQ->build();

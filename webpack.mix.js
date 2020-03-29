@@ -18,7 +18,7 @@ const whitelister = require('purgecss-whitelister');
  */
 
 mix.setPublicPath('./dist')
-   .browserSync('build.test');
+   .browserSync('cgcn.test');
 
 mix.sass('resources/assets/styles/app.scss', 'styles')
    .sass('resources/assets/styles/editor.scss', 'styles')
@@ -28,10 +28,12 @@ mix.sass('resources/assets/styles/app.scss', 'styles')
    })
    .purgeCss({
       whitelist: [
-         whitelister(
-            './resources/assets/styles/partials/header.scss'
-         )
+         require('purgecss-with-wordpress').whitelist,
+         'w-8',
+         'h-8',
+         'mr-2',
       ],
+      whitelistPatterns: require('purgecss-with-wordpress').whitelistPatterns,
    });
 
 mix.js('resources/assets/scripts/app.js', 'scripts')

@@ -27,6 +27,7 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('comment-reply');
     }
 
+    wp_enqueue_style( 'typekit_fonts', '//use.typekit.net/gma4thz.css"', false, null );
     wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), false, null);
 }, 100);
 
@@ -146,51 +147,3 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer'
     ] + $config);
 });
-
-//Add custom post types
-add_action( 'init', function() {
-	register_extended_post_type( 'course', [
-        'admin_cols' => array(
-            // The default Title column:
-            'title',
-            // A taxonomy terms column:
-            'genre' => array(
-                'taxonomy' => 'category'
-            ),
-            // A meta field column:
-            'date' => array(
-                'title'       => 'Date',
-                'meta_key'    => 'date',
-                'date_format' => 'd/m/Y'
-            ),
-        ),
-        'menu_icon' => 'dashicons-book',
-        'show_in_rest' => true,
-    ],
-    [
-        'singular' => 'Course',
-        'plural'   => 'Courses',
-        'slug'     => 'course',   
-    ]
-    );
-    register_extended_taxonomy( 'category', 'course', array(
-        'meta_box' => 'radio',
-    ), array(
-    
-        # Override the base names used for labels:
-        'singular' => 'Category',
-        'plural'   => 'Categories',
-        'slug'     => 'category'
-    
-    ) );
-    register_extended_taxonomy( 'tag', 'course', array(
-        'meta_box' => 'simple',
-    ), array(
-    
-        # Override the base names used for labels:
-        'singular' => 'Tag',
-        'plural'   => 'Tags',
-        'slug'     => 'tag'
-    
-    ) );
-} );

@@ -5,22 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Feature3Column extends Block
+class Logic extends Block
 {
     /**
      * The display name of the block.
      *
      * @var string
      */
-    public $name = 'Feature 3 Column';
-    public $slug = 'feature3column';
+    public $name = 'Logic';
 
     /**
      * The description of the block.
      *
      * @var string
      */
-    public $description = 'Simple 3 Columns';
+    public $description = 'Lorem ipsum...';
 
     /**
      * The category this block belongs to.
@@ -55,7 +54,7 @@ class Feature3Column extends Block
      *
      * @var string
      */
-    public $mode = 'edit';
+    public $mode = 'preview';
 
     /**
      * The block alignment class.
@@ -79,8 +78,8 @@ class Feature3Column extends Block
     public function with()
     {
         return [
-            'title' => get_field('Title'),
-            'courses' => get_field('courses_object'),
+            'bg' => get_field('BG Image'),
+            'content' => get_field('Content')
         ];
     }
 
@@ -101,22 +100,12 @@ class Feature3Column extends Block
      */
     public function fields()
     {
-        $feature3Column = new FieldsBuilder('feature3_column');
+        $logic = new FieldsBuilder('logic');
 
-        $feature3Column
-            ->addText('Title')
-            ->addRelationship('courses_object', [
-                'label' => 'Courses',
-                'max' => 3,
-                'post_type' => ['course'],
-            ]);
+        $logic
+            ->addImage('BG Image')
+            ->addWysiwyg('Content');
 
-        return $feature3Column->build();
+        return $logic->build();
     }
-
-    /**
-     * Return the items field.
-     *
-     * @return array
-     */
 }

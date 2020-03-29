@@ -1,19 +1,254 @@
 /* purgecss start ignore */
-//Feature3Columnn
-@screen lg {
-  .half-blue {
-    background: linear-gradient(0deg, #eff8f7 50%, transparent 50%)
+
+.wp-block-group__inner-container {
+  @apply w-full mx-auto px-4;
+}
+
+@screen sm {
+  .wp-block-group__inner-container {
+    @apply px-6;
+    max-width: 640px;
   }
 }
 
-//Split Content
-.split-content {
-  p {
-    @apply mb-4;
-  }
-  strong {
-    @apply text-p-gray-300;
+@screen md {
+  .wp-block-group__inner-container {
+    max-width: 768px;
   }
 }
+
+@screen lg {
+  .wp-block-group__inner-container {
+    @apply px-8;
+    max-width: 1024px;
+  }
+}
+
+@screen xl {
+  .wp-block-group__inner-container {
+    max-width: 1280px;
+  }
+}
+
+//Header Block
+.header_block {
+  h2 {
+    @apply font-caslon font-black tracking-wider text-3xl py-12 mb-0 leading-snug;
+  }
+}
+
+@screen md {
+  .header_block {
+    h2 {
+      @apply text-5xl;
+    }
+  }
+}
+
+@screen lg {
+  .header_block {
+    h2 {
+      @apply text-6xl;
+    }
+  }
+}
+
+//Logo Block
+#sticky_top {
+  height: 1px;
+  @apply bg-white;
+}
+
+.sticky_active {
+  .sticky-text {
+    @apply block;
+  }
+  .sticky-subtitle {
+    @apply hidden;
+  }
+  .sticky-container {
+    @apply py-3;
+  }
+  .sticky-logos {
+    span {
+      @apply text-xl px-2 pb-1;
+    }
+    img {
+      @apply h-8;
+    }
+  }
+}
+
+//FAQ Block
+.faq_header {
+  @apply py-12 text-3xl leading-snug mb-0;
+}
+
+@screen md {
+  .faq_header {
+    @apply text-4xl px-16 py-16;
+  }
+}
+
+@screen lg {
+  .faq_header {
+    @apply text-5xl max-w-5xl mx-auto px-0;
+  }
+}
+
+
+.faq_container {
+  @apply pb-16;
+
+}
+.faq_block {
+  @apply shadow shadow-md;
+  .faq-item {
+    &:last-child {
+      @apply border-0;
+      .faq-content {
+        @apply pb-4;
+      }
+    }
+  }
+  .faq-content {
+    a {
+      @apply underline text-blue-700;
+    }
+  }
+}
+
+@screen md {
+  .faq_container {
+    @apply pb-20;
+  }
+}
+
+@screen lg {
+  .faq_container {
+    @apply pb-24;
+  }
+}
+
+@screen xl {
+  .faq_container {
+    @apply pb-32;
+  }
+}
+
+//Logix Block
+@screen md {
+  .logic-content {
+    p {
+      @apply text-2xl leading-normal;
+    }
+  }
+}
+
+@screen lg {
+  .logic-content {
+    p {
+      @apply text-3xl;
+    }
+  }
+}
+
+.decision_tree_area {
+  @apply shadow-md;
+  b, strong {
+    @apply font-bold;
+  }
+}
+
+#question_border {
+  @apply border-b-8 border-black pt-8 w-24 mx-auto;
+}
+
+.dt_display_title {
+  @apply hidden;
+}
+
+.dt_display_question {
+  @apply p-8 text-3xl text-center font-semibold leading-snug;
+  a {
+    @apply underline cursor-pointer text-blue-700;
+  }
+}
+
+@screen md {
+  .dt_display_question {
+    @apply mx-auto text-5xl p-16 pt-12;
+  }
+  #question_border {
+    @apply pt-12 w-36;
+  }
+}
+
+#dt_choice_set_58 {
+  @apply bg-black;
+  .dt_button_container {
+    @apply grid grid-cols-2 gap-8 py-8 px-8;
+  }
+
+  .dt_button {
+    @apply uppercase font-semibold text-2xl text-center py-2 cursor-pointer;
+    &:first-child {
+      @apply bg-white;
+    }
+    &:last-child {
+      @apply border-2 border-white text-white;
+    }
+    &:hover {
+      @apply transform scale-105 transition duration-300;
+    } 
+  }
+
+  #radio_answer_58 {
+    @apply normal-case;
+  }
+  .dt_restart_container {
+    @apply bg-black text-center py-8;
+  }
+  .answer-restart {
+    @apply inline-block;
+  }
+  .dt_restart_btn_container {
+    @apply text-white bg-black px-8 py-2 flex items-center uppercase font-semibold text-2xl border-2 border-white cursor-pointer;
+    &:hover {
+      @apply transform scale-105 transition duration-300;
+    } 
+  }
+}
+
+@screen md {
+  #dt_choice_set_58 {
+    .dt_button_container {
+      @apply gap-16 p-16;
+    }
+    .dt_button {
+      @apply text-3xl;
+    }
+    .dt_restart_container {
+      @apply py-16;
+    }
+    .dt_restart_btn_container {
+      @apply text-3xl;
+    }
+  }
+}
+
+
+@screen lg {
+  #dt_choice_set_58 {
+    .dt_button_container {
+      @apply px-32;
+    }
+  }
+  .dt_display_question {
+    @apply px-32;
+  }
+}
+
+
 
 /* purgecss end ignore */

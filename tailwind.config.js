@@ -15,21 +15,11 @@ module.exports = {
       black: '#000',
       white: '#fff',
 
-      'p-teal': '#31bcb1',
-      'p-teal-200': '#eff8f7',
-      'p-gray': {
-        100: '#6f6f6f',
-        200: '#868686',
-        300: '#353535',
+      'c-gray': {
+        50: '#E8EDEE',
+        100: '#DDDDDD',
       },
-      'p-black': '#111111',
-      'p-orange': '#e79948',
-      'p-orange-200': '#d4791b',
-      'p-blue': {
-        100: '#EBF4FF',
-        200: '#00abc6',
-        300: '#119c9e'
-      },
+
 
       gray: {
         100: '#f7fafc',
@@ -250,8 +240,13 @@ module.exports = {
       default: '1',
     },
     fontFamily: {
-      mont: [
-        'Montserrat'
+      caslon: [
+        '"Big Caslon FB"',
+        'big-caslon-fb',
+      ],
+      freight: [
+        '"FreightSans Pro"',
+        'freight-sans-pro',
       ],
       sans: [
         'system-ui',

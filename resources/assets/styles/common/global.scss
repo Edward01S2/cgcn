@@ -1,23 +1,39 @@
 /**
  * Global
  */
+/* purgecss start ignore */
 
 html {
-  @apply font-mont;
+  @apply font-freight;
   scroll-behavior: smooth;
 }
 
-p {
-  @apply mb-4 leading-7;
+p, li {
+  @apply mb-4 leading-7 text-lg;
 }
+@screen md {
+  p, li {
+    @apply text-xl leading-normal;
+  }
+}
+// @screen lg {
+//   p, li {
+//     @apply text-2xl;
+//   }
+// }
+
+ul {
+  @apply list-disc ml-12;
+}
+
 h2 {
-  @apply font-semibold text-2xl mb-4 text-p-gray-300;
+  @apply font-semibold text-2xl mb-4;
 }
 h3 {
-  @apply font-semibold text-xl mb-4 text-p-gray-300;
+  @apply font-semibold text-xl mb-4;
 }
-strong {
-  @apply font-semibold text-p-gray-300;
+b, strong {
+  @apply font-semibold;
 }
 
 // a {
@@ -38,3 +54,5 @@ strong {
 //     background-color: $color-value;
 //   }
 // }
+
+/* purgecss end ignore */

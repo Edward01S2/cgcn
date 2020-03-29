@@ -42,22 +42,6 @@ class ThemeOptions extends Field
      */
     public function fields()
     {
-        $forms = \GFAPI::get_forms();
-        $choices= [];
-        foreach($forms as $form) {
-            $choices[] = [
-                $form['id'] => $form['title']
-            ];
-        }
-        //var_dump($choices);
-
-        $gravityforms = new FieldsBuilder('gravityforms');
-        $gravityforms
-            ->addSelect('footer_form', [
-                'label' => 'Select Form',
-                'choices' => $choices,
-            ]);
-
         $themeoptions = new FieldsBuilder('themeoptions', [
             'title' => 'Theme Options',
             'style' => 'seamless'
@@ -65,12 +49,19 @@ class ThemeOptions extends Field
 
         $themeoptions
             ->setLocation('options_page', '==', 'acf-options-options')
-            ->addTab('Logos', ['placement' => 'top'])
-            ->addImage('Logo')
             ->addTab('Footer', ['placement' => 'top'])
-            ->addText('Copyright')
-            ->addText('form_title', ['label' => 'Form Title'])
-            ->addFields($gravityforms);
+            ->addRepeater('Links', [
+                'layout' => 'row'
+            ])
+                ->addLink('Link')
+            ->endRepeater()
+            ->addText('Subtitle')
+            ->addRepeater('Logos', [
+                'layout' => 'row'
+            ])
+                ->addImage('Logo')
+                ->addLink('Logo Link')
+            ->endRepeater();
 
         return $themeoptions->build();
     }

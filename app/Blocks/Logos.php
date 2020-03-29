@@ -5,28 +5,28 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Form extends Block
+class Logos extends Block
 {
     /**
      * The display name of the block.
      *
      * @var string
      */
-    public $name = 'Form';
+    public $name = 'Logos';
 
     /**
      * The description of the block.
      *
      * @var string
      */
-    public $description = 'Form Layout';
+    public $description = 'Lorem ipsum...';
 
     /**
      * The category this block belongs to.
      *
      * @var string
      */
-    public $category = 'Layout';
+    public $category = 'layout';
 
     /**
      * The icon of this block.
@@ -47,7 +47,7 @@ class Form extends Block
      *
      * @var array
      */
-    public $post_types = ['post', 'page', 'course'];
+    public $post_types = ['post', 'page'];
 
     /**
      * The default display mode of the block that is shown to the user.
@@ -78,9 +78,9 @@ class Form extends Block
     public function with()
     {
         return [
-            'form' => get_field('form'),
-            'link' => get_field('Form Association')
-
+            'subtitle' => get_field('Subtitle'),
+            'sticky' => get_field('Sticky Text'),
+            'logos' => get_field('Logos'),
         ];
     }
 
@@ -101,32 +101,19 @@ class Form extends Block
      */
     public function fields()
     {
+        $logos = new FieldsBuilder('logos');
 
-        $forms = \GFAPI::get_forms();
-        $choices= [];
-        foreach($forms as $form) {
-            $choices[] = [
-                $form['id'] => $form['title']
-            ];
-        }
-        //var_dump($choices);
+        $logos
+            ->addText('Subtitle')
+            ->addText('Sticky Text')
+            ->addRepeater('Logos', [
+                'layout' => 'row'
+            ])
+                ->addImage('Logo')
+                ->addLink('Logo Link')
+            ->endRepeater();
 
-        $gravityforms = new FieldsBuilder('gravityforms');
-        $gravityforms
-            ->addSelect('form', [
-                'label' => 'Select Form',
-                'choices' => $choices,
-        ]);
-
-        $form = new FieldsBuilder('form');
-
-        $form
-            ->addFields($gravityforms)
-            ->addRelationship('Form Association', [
-                'max' => 1,
-            ]);
-
-        return $form->build();
+        return $logos->build();
     }
 
 }
