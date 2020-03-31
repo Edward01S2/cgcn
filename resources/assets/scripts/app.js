@@ -42,8 +42,8 @@ if($(window).width() < 1024) {
 }
 else if($(window).width() < 1280) {
   var options = {
-    rootMargin: '0px 0px -82% 0px',
-    threshold: .75 // half of item height
+    rootMargin: '0px 0px -76% 0px',
+    threshold: .25 // half of item height
   }
 }
 else if($(window).width() < 1440) {
