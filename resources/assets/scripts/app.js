@@ -34,9 +34,29 @@ $(document).ready(() => {
 // // give the observer some dom nodes to keep an eye on
 // observer.observe(sentinalEl)
 
-const options = {
-  rootMargin: '0px 0px -69% 0px',
-  threshold: .70 // half of item height
+if($(window).width() < 1024) {
+  var options = {
+    rootMargin: '0px 0px -84% 0px',
+    threshold: .25 // half of item height
+  }
+}
+else if($(window).width() < 1280) {
+  var options = {
+    rootMargin: '0px 0px -82% 0px',
+    threshold: .75 // half of item height
+  }
+}
+else if($(window).width() < 1440) {
+  var options = {
+    rootMargin: '0px 0px -79% 0px',
+    threshold: .75 // half of item height
+  }
+}
+else {
+  var options = {
+    rootMargin: '0px 0px -75% 0px',
+    threshold: .75 // half of item height
+  }
 }
 
 const circle = document.querySelector('#sticky_header');

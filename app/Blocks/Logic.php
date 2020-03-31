@@ -79,7 +79,11 @@ class Logic extends Block
     {
         return [
             'bg' => get_field('BG Image'),
-            'content' => get_field('Content')
+            'content' => get_field('Content'),
+            'title' => get_field('Flow Title'),
+            'btn' => get_field('Flow Chart'),
+            'forgive_title' => get_field('Forgive Title'),
+            'forgive_btn' => get_field('Forgive Chart'),
         ];
     }
 
@@ -104,7 +108,11 @@ class Logic extends Block
 
         $logic
             ->addImage('BG Image')
-            ->addWysiwyg('Content');
+            ->addWysiwyg('Content')
+            ->addText('Flow Title')
+            ->addFile('Flow Chart')
+            ->addText('Forgive Title')
+            ->addFile('Forgive Chart');
 
         return $logic->build();
     }

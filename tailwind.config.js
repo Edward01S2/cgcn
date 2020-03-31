@@ -20,6 +20,11 @@ module.exports = {
         100: '#DDDDDD',
       },
 
+      'c-blue': {
+        100: '#D4DFE3',
+        200: '#243856'
+      },
+
 
       gray: {
         100: '#f7fafc',
@@ -639,7 +644,7 @@ module.exports = {
     borderColor: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
+    borderWidth: ['responsive', 'hover'],
     boxShadow: ['responsive', 'hover', 'focus'],
     boxSizing: ['responsive'],
     cursor: ['responsive'],

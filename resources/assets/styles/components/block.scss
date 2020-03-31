@@ -33,14 +33,20 @@
 //Header Block
 .header_block {
   h2 {
-    @apply font-caslon font-black tracking-wider text-3xl py-12 mb-0 leading-snug;
+    @apply font-caslon tracking-tight text-4xl py-12 pb-16 mb-0 leading-none;
+  }
+  .hero-header {
+    @apply text-xl tracking-wider;
   }
 }
 
 @screen md {
   .header_block {
     h2 {
-      @apply text-5xl;
+      @apply text-5xl pb-20;
+    }  
+    .hero-header {
+      @apply text-2xl tracking-widest;
     }
   }
 }
@@ -49,6 +55,9 @@
   .header_block {
     h2 {
       @apply text-6xl;
+    }
+    .hero-header {
+      @apply text-3xl;
     }
   }
 }
@@ -105,7 +114,7 @@
   @apply shadow shadow-md;
   .faq-item {
     &:last-child {
-      @apply border-0;
+      @apply border-b-0;
       .faq-content {
         @apply pb-4;
       }
@@ -161,7 +170,7 @@
 }
 
 #question_border {
-  @apply border-b-8 border-black pt-8 w-24 mx-auto;
+  @apply border-b-8 border-c-blue-100 pt-8 w-24 mx-auto;
 }
 
 .dt_display_title {
@@ -185,7 +194,7 @@
 }
 
 #dt_choice_set_58 {
-  @apply bg-black;
+  @apply bg-c-blue-100;
   .dt_button_container {
     @apply grid grid-cols-2 gap-8 py-8 px-8;
   }
@@ -196,7 +205,7 @@
       @apply bg-white;
     }
     &:last-child {
-      @apply border-2 border-white text-white;
+      @apply border-2 border-c-blue-200 text-c-blue-200;
     }
     &:hover {
       @apply transform scale-105 transition duration-300;
@@ -207,13 +216,13 @@
     @apply normal-case;
   }
   .dt_restart_container {
-    @apply bg-black text-center py-8;
+    @apply bg-c-blue-100 text-center py-8;
   }
   .answer-restart {
     @apply inline-block;
   }
   .dt_restart_btn_container {
-    @apply text-white bg-black px-8 py-2 flex items-center uppercase font-semibold text-2xl border-2 border-white cursor-pointer;
+    @apply text-c-blue-200 bg-c-blue-100 px-8 py-2 flex items-center uppercase font-semibold text-2xl border-2 border-c-blue-200 cursor-pointer;
     &:hover {
       @apply transform scale-105 transition duration-300;
     } 
