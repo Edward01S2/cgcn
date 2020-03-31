@@ -34,30 +34,38 @@ $(document).ready(() => {
 // // give the observer some dom nodes to keep an eye on
 // observer.observe(sentinalEl)
 
-if($(window).width() < 1024) {
-  var options = {
-    rootMargin: '0px 0px -84% 0px',
-    threshold: .25 // half of item height
+var options
+function setObserver() {
+  if($(window).width() < 1024) {
+    options = {
+      rootMargin: '0px 0px -84% 0px',
+      threshold: .25 // half of item height
+    }
+  }
+  else if($(window).width() < 1280) {
+    options = {
+      rootMargin: '0px 0px -76% 0px',
+      threshold: .25 // half of item height
+    }
+  }
+  else if($(window).width() < 1440) {
+    options = {
+      rootMargin: '0px 0px -79% 0px',
+      threshold: .75 // half of item height
+    }
+  }
+  else {
+    options = {
+      rootMargin: '0px 0px -75% 0px',
+      threshold: .75 // half of item height
+    }
   }
 }
-else if($(window).width() < 1280) {
-  var options = {
-    rootMargin: '0px 0px -76% 0px',
-    threshold: .25 // half of item height
-  }
-}
-else if($(window).width() < 1440) {
-  var options = {
-    rootMargin: '0px 0px -79% 0px',
-    threshold: .75 // half of item height
-  }
-}
-else {
-  var options = {
-    rootMargin: '0px 0px -75% 0px',
-    threshold: .75 // half of item height
-  }
-}
+
+setObserver();
+$(window).resize(function() {
+  setObserver();
+});
 
 const circle = document.querySelector('#sticky_header');
 
