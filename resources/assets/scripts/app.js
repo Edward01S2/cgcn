@@ -15,7 +15,7 @@ $(document).ready(() => {
 
 
 const options = {
-  rootMargin: '0px 0px -69% 0px',
+  rootMargin: '0px 0px -80% 0px',
   threshold: .50 // half of item height
 }
 
